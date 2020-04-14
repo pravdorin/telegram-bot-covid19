@@ -1,19 +1,21 @@
 require('dotenv').config();
 const Telegraf = require('telegraf');
-const SocksAgent = require('socks5-https-client/lib/Agent');
+// const SocksAgent = require('socks5-https-client/lib/Agent');
 const api = require('covid19-api');
 const Markup = require('telegraf/markup');
 const COUNTRIES_LIST = require('./constants');
 
-// Подключение через прокси-сервер
-const socksAgent = new SocksAgent({
-  socksHost: '151.80.100.147',
-  socksPort: '9951',
-});
+// // Подключение через прокси-сервер
+// const socksAgent = new SocksAgent({
+//   socksHost: '151.80.100.147',
+//   socksPort: '9951',
+// });
 
-const bot = new Telegraf(process.env.BOT_TOKEN, {
-  telegram: { agent: socksAgent },
-});
+// const bot = new Telegraf(process.env.BOT_TOKEN, {
+//   telegram: { agent: socksAgent },
+// });
+
+const bot = new Telegraf(process.env.BOT_TOKEN)
 
 // Стартовое сообщение
 bot.start((ctx) =>
