@@ -7,8 +7,8 @@ const COUNTRIES_LIST = require('./constants');
 
 // Подключение через прокси-сервер
 const socksAgent = new SocksAgent({
-  socksHost: '49.12.4.194',
-  socksPort: '37501',
+  socksHost: '151.80.100.147',
+  socksPort: '9951',
 });
 
 const bot = new Telegraf(process.env.BOT_TOKEN, {
